@@ -64,6 +64,7 @@ public class ProductDAOImpl implements ProductDAO{
     sb.append("  from product ");
     sb.append(" where product_id = :id ");
 
+
     try {
       Map<String, Long> param = Map.of("id", productId);
 
@@ -215,3 +216,4 @@ public class ProductDAOImpl implements ProductDAO{
     return rows;
   }
 }
+

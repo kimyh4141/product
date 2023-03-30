@@ -88,7 +88,8 @@ public class MemberSVCImpl implements MemberSVC {
    */
   @Override
   public Optional<Member> login(String email, String passwd) {
-    return Optional.empty();
+
+    return memberDAO.login(email,passwd);
   }
 
   /**
