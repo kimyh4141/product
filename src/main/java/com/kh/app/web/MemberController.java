@@ -99,7 +99,6 @@ public class MemberController {
   }
 
 
-
   private String hobbyToString(List<String> hobby) {
     return StringUtils.join(hobby,",");
   }

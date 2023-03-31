@@ -1,10 +1,10 @@
 package com.kh.app.web;
 
 import com.kh.app.domain.entity.Product;
-import com.kh.app.web.rest.SaveRest;
-import com.kh.app.web.rest.UpdateRest;
 import com.kh.app.domain.product.svc.ProductSVC;
 import com.kh.app.web.exception.RestBizException;
+import com.kh.app.web.rest.SaveRest;
+import com.kh.app.web.rest.UpdateRest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

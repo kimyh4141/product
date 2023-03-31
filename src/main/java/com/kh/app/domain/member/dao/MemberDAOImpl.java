@@ -199,13 +199,10 @@ public class MemberDAOImpl implements MemberDAO{
     String sql = "select count(email) from member where email = :email ";
 
     Map<String, String> param = Map.of("email", email);
-    try {
-      template.queryForObject(sql, param, Integer.class);
-      flag = true;
-    } catch (EmptyResultDataAccessException e) {
-      flag = false;
-    }
-    return flag;
+
+    Integer cnt = template.queryForObject(sql, param, Integer.class);
+
+    return cnt == 1 ? true : false;
   }
 
   /**
@@ -220,7 +217,7 @@ public class MemberDAOImpl implements MemberDAO{
     sql.append("  from member ");
     sql.append(" where email = :email and passwd = :passwd ");
 
-    Map<String, String> param = Map.of("email", passwd,"passwd",passwd);
+    Map<String, String> param = Map.of("email", email,"passwd",passwd);
     // 레코드1개를 반환할경우 query로 list를 반환받고 list.size() == 1 ? list.get(0) : null 처리하자!!
     List<Member> list = template.query(
         sql.toString(),

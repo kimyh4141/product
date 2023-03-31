@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Slf4j
 @SpringBootTest
-public class MemberSVCImplTest {
+class MemberSVCImplTest {
 
   @Autowired
   MemberSVC memberSVC;
@@ -20,7 +20,7 @@ public class MemberSVCImplTest {
     boolean exist = memberSVC.isExist("test@kh.com");
     Assertions.assertThat(exist).isTrue();
 
-    exist = memberSVC.isExist("test@kh.com");
+    exist = memberSVC.isExist("test@kh.com111");
     Assertions.assertThat(exist).isFalse();
   }
 }
